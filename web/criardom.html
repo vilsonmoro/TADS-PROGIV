@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="base" >
+
+        </div>
+        <input type="button" value="clique aqui" onclick="criar()" />
+        <input type="number" id="qtde" />
+        <script>
+            /* var para = document.createElement("p");
+             var content =  document.createTextNode("Olá pessoal");
+             para.appendChild(content);
+             
+             var ancora = document.getElementById("base");
+             ancora.appendChild(para);     
+             */
+
+            function criar() {
+                var qtde = document.getElementById("qtde").value;
+                for (i = 1; i < qtde; i++) {
+                    var bt = document.createElement("button");
+                    var tx = document.createTextNode("bt"+i);
+                    bt.appendChild(tx);
+
+                    var ancora = document.getElementById("base");
+                    ancora.appendChild(bt);
+                }
+            }
+
+
+
+        </script>    
+    </body>
+</html>
