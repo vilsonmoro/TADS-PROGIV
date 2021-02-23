@@ -1,9 +1,12 @@
+<%-- 
+    Document   : editauser
+    Created on : 23/02/2021, 19:00:34
+    Author     : vilso
+--%>
+<%@page import="Controller.Usuario"%>
+<%@page import="Modelo.UsuarioDAO"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Cadastro</title>
@@ -35,16 +38,33 @@ and open the template in the editor.
         </style>         
     </head>
     <body>
+        <%
+          String iduser = request.getParameter("iduser");
+          Usuario usuario = UsuarioDAO.consultar(Integer.parseInt(iduser));
+        %>
         <div class="container">
-            <form name="cadastro" action="recebeDadosUsuario.jsp?acao=S" method="GET">
+            <form name="cadastro" action="recebeDadosUsuario.jsp?acao='U'" method="GET">
+                <input type="text" value="<%out.write(usuario.getNome());%>"
+                       name="iduser"/>
                 <label for="name">Informe o nome</label>
-                <input type="text" id="name" name="nome" placeholder="Informe nome" />
+                <input type="text" 
+                       id="name" 
+                       name="nome" 
+                       placeholder="Informe nome" 
+                       value="<%out.write(usuario.getNome());%>"/>
                 
                 <label for="email">Informe o email</label>
-                <input type="text" id="email" name="email"/>
+                <input type="text" 
+                       id="email" 
+                       name="email"
+                       value="<%out.write(usuario.getEmail());%>"/>
+                       
                 
-                <label for="fone">Informe a senha</label>
-                <input type="password" id="password" name="password" />
+                <label for="password">Informe a senha</label>
+                <input type="password" 
+                       id="password" 
+                       name="password"
+                       value="<%out.write(usuario.getPassword());%>"/>
                 <input type="button" value="Gravar" onclick="enviaForm()" />
             </form> 
                         

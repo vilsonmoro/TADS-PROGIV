@@ -18,8 +18,29 @@ import utils.Conexao;
  * @author vilso
  */
 public class UsuarioDAO {
-    public static boolean salvar(Usuario user) {
-        
+    
+    public static boolean alterar(Usuario user) {        
+        String sql = "update usuario set "
+                + " nome = ?, "
+                + " email = ?, "
+                + " password = ? "
+                + " where id = ?";
+        PreparedStatement stm;
+        try {
+            Connection con = Conexao.getConexao();
+            stm = con.prepareStatement(sql);
+            stm.setString(1, user.getNome());
+            stm.setString(2, user.getEmail());
+            stm.setString(3, user.getPassword());
+            stm.setInt(4, user.getId());
+            stm.execute();
+        } catch (Exception ex) {
+            return false;            
+        }        
+      return true;  
+    }
+    
+    public static boolean salvar(Usuario user) {        
         String sql = "insert into usuario(nome, email, password)values(?,?,?)";
         PreparedStatement stm;
         try {
@@ -46,5 +67,26 @@ public class UsuarioDAO {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
+    }
+    
+    public static Usuario consultar(int id){
+        Usuario user = new Usuario();
+        try {            
+            String sql = "select id, nome, email from usuario where id = ?";            
+            PreparedStatement stm = Conexao.getConexao().prepareStatement(sql);
+            stm.setInt(1, id);
+           ResultSet rs = stm.executeQuery();
+           if(rs.next()){
+               user.setId(rs.getInt("id"));
+               user.setNome(rs.getString("nome"));
+               user.setEmail(rs.getString("email"));
+               user.setPassword(rs.getString("password"));
+           }
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
     }
 }

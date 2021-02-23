@@ -22,6 +22,8 @@
                     <th>Id</th>
                     <th>Nome</th>
                     <th>Email</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +34,8 @@
                      out.write("<td>" + rs.getString("id") + "</td>");
                      out.write("<td>" + rs.getString("nome") + "</td>");
                      out.write("<td>" + rs.getString("email") + "</td>");
+                     out.write("<td><a href=editauser.jsp?iduser=" + rs.getString("id") + ">Editar</a></td>");
+                     out.write("<td><a href=excluiruser.jsp?iduser=" + rs.getString("id") + ">Excluir</a></td>");
                      out.write("</tr>");
                   }
                 %>

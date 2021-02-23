@@ -10,6 +10,7 @@ package Controller;
  * @author vilso
  */
 public class Usuario {
+    private int id;
     private String nome;
     private String email;
     private String password;
@@ -50,6 +51,14 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
    
