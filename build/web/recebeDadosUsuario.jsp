@@ -20,20 +20,18 @@
            String password = request.getParameter("password");
            Usuario user = new Usuario(nome, email, password);
            
-           String acao = request.getParameter("acao");
-           if(acao.equal("S")){
+           String iduser = request.getParameter("iduser");
+           if(iduser == null){
                 if(UsuarioDAO.salvar(user)){
                     out.write("salvo com sucesso");             
                 }
            }
            else{
-             String iduser = request.getParameter("iduser");
              user.setId(Integer.parseInt(iduser));
              if(UsuarioDAO.alterar(user)){
                     out.write("Alterado com sucesso");             
                 }
            }
-        %>
-        <a href="consultauser.jsp">Consulta</a>
+        %>        
     </body>
 </html>

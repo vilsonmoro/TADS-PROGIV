@@ -72,7 +72,7 @@ public class UsuarioDAO {
     public static Usuario consultar(int id){
         Usuario user = new Usuario();
         try {            
-            String sql = "select id, nome, email from usuario where id = ?";            
+            String sql = "select id, nome, email, password from usuario where id = ?";            
             PreparedStatement stm = Conexao.getConexao().prepareStatement(sql);
             stm.setInt(1, id);
            ResultSet rs = stm.executeQuery();

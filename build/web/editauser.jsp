@@ -43,8 +43,8 @@
           Usuario usuario = UsuarioDAO.consultar(Integer.parseInt(iduser));
         %>
         <div class="container">
-            <form name="cadastro" action="recebeDadosUsuario.jsp?acao='U'" method="GET">
-                <input type="text" value="<%out.write(usuario.getNome());%>"
+            <form name="cadastro" action="recebeDadosUsuario.jsp" method="POST">
+                <input type="text" value="<%out.write(iduser);%>"
                        name="iduser"/>
                 <label for="name">Informe o nome</label>
                 <input type="text" 
