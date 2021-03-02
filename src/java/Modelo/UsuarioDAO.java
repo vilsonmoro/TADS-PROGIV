@@ -89,4 +89,25 @@ public class UsuarioDAO {
         }
         return user;
     }
+    
+    public static Usuario logar(String email, String password){
+        String sql = "select id, nome, email from usuario where email = ? and password = ?";
+        PreparedStatement stm;
+        Usuario user = new Usuario();
+        try {
+            Connection con = Conexao.getConexao();
+            stm = con.prepareStatement(sql);
+            stm.setString(1, email);
+            stm.setString(2, password);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                user.setId(rs.getInt("id"));
+                user.setNome(rs.getString("nome"));   
+                user.setEmail(rs.getString("email"));
+            }
+        } catch (Exception ex) {
+            return null;            
+        }        
+      return user; 
+    } 
 }
