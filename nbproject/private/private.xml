@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/src/java/Controller/Usuario.java</file>
-            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/recebeDadosUsuario.jsp</file>
-            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/src/java/Modelo/UsuarioDAO.java</file>
-            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/editauser.jsp</file>
+            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/vendaajax.jsp</file>
             <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/consultauser.jsp</file>
+            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/insertitens.jsp</file>
+            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/ajaxprodutos.jsp</file>
             <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/cadastrouser.html</file>
             <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/cadastrovenda.jsp</file>
-            <file>file:/C:/Users/vilso/OneDrive/Documentos/NetBeansProjects/locacarCompleto/TADS/web/login.jsp</file>
         </group>
     </open-files>
 </project-private>
